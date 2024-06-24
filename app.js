@@ -28,14 +28,14 @@ app.use('/users', usersRouter);
 app.use('/books', bookRouter);
 
 
-//404 Handler
-// app.use((req, res, next)=>{
-//   let error = new Error();
-//   error.message = "Error: Page not found"
-//   error.status = 404
-//   console.log("in the 404 Handler")
-//   res.render('not_found', {error})
-// })
+
+app.use((req, res, next)=>{
+  let error = new Error();
+  error.message = "Error: Page not found"
+  error.status = 404
+  console.log("in the 404 Handler")
+  res.render('not_found', {error})
+})
 
 //Global Error Handler
 app.use((req, res, error)=>{
