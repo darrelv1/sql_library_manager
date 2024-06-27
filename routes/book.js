@@ -5,13 +5,15 @@ const bookData =require('./helperData')
 
 
 //higher order function for error handling
-const asyncHandler = (innerFunction) =>{
-    return async (req, res, view='error')=>{
+const asyncHandler = (innerFunction, view='error') =>{
+    return async (req, res )=>{
+
         try {
-            await innerFunction(req, res, view='error')
+            await innerFunction(req, res)
         }  catch (error) {
+            console.log(`error: ${error}`)
             console.log("Async has been used and produce an error")
-            res.render(view, {error})
+            res.render(view)
         }
     }
 }
@@ -25,8 +27,6 @@ let activeFields = [];
 
     }
 })()
-
-
 
 
 //Responds a list of Book objects
@@ -52,18 +52,17 @@ router.get('/', asyncHandler(async(req, res)=>{
 router.get('/new', asyncHandler(async(req, res)=>{
     res.render('new.pug')
 
-}))
+}, view="error_Form") )
 
 
 //Responds the matched book to the id,
-router.get('/:id', asyncHandler( async (req, res, view ="error_Form") => {
+router.get('/:id', asyncHandler( async (req, res) => {
 
     const instance  = await Book.findOne({
         'where': {
             'id': req.params['id']
         }
     })
-
     let instObj = {}
     activeFields.forEach((field)=>{
         instObj[field] = instance[field]
@@ -71,18 +70,15 @@ router.get('/:id', asyncHandler( async (req, res, view ="error_Form") => {
     })
     res.render('update', {data:  instObj})
 
-}))
+}, view="error_Form") )
 
 
 //Posts a new book to the database
-router.post('/new', asyncHandler(async(req, res, view="error_Form") =>{
+router.post('/new', asyncHandler(async(req, res) =>{
 
         await Book.create(req.body)
         res.redirect('/')
-
-
-
-}))
+}, view="error_Form") )
 
 //Updates book in the database
 router.post('/:id',  asyncHandler(async (req, res)=>{
@@ -92,11 +88,12 @@ router.post('/:id',  asyncHandler(async (req, res)=>{
             'id': idParam
         }
     })
+
     await instance.update(req.body)
     res.redirect("/")
 
 
-}))
+}, view="error_Form") )
 
 
 //Deletes a book

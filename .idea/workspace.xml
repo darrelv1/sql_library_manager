@@ -3,10 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="5feac8a7-e34c-4f22-800f-b892ac31dedf" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library.db" beforeDir="false" afterPath="$PROJECT_DIR$/library.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/book.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/book.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/.error.jade.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/.index.jade.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/.layout.jade.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/error_Form.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/error_Form.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/not_found.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/not_found.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/update.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/update.pug" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +87,7 @@
       <workItem from="1691292535715" duration="108000" />
       <workItem from="1716727793563" duration="6701000" />
       <workItem from="1716753008534" duration="31113000" />
-      <workItem from="1719149354670" duration="11741000" />
+      <workItem from="1719149354670" duration="20753000" />
     </task>
     <servers />
   </component>
